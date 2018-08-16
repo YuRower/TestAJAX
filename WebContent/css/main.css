@@ -1,0 +1,98 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+html, body
+{
+	margin: 0;
+	height: 100%;
+}
+.wrapper
+{
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+
+.footer, .push
+{
+height: 50px;
+}
+div .container
+{
+	width: 100%;
+}
+header,footer
+{
+	color: white;
+	background-color: black;
+	clear: left;
+	text-align: center;
+}
+header
+{
+	padding: 10px;
+}
+nav
+{
+float: left;
+max-width: 160px;
+margin: 0;
+padding: 1em;
+}
+nav ul
+{
+	list-style: none;
+	padding: 0;
+}
+nav ul a
+{
+	text-decoration: none;
+}
+article
+{
+	margin-left: 170px;
+	padding: 1em;
+	overflow: hidden;
+}
+
+#qq
+{
+	display: none;
+}
+
+
+/*DOWNLOAD SECTION*/
+.download{
+	padding: 90px 0;
+}
+.download_block{
+	text-align: center;
+}
+.download_block h5{
+	font-size: 24px;
+}
+.download_block p{
+	font-family: "RalewayBold", sans-serif;
+	text-transform: uppercase;
+}
+
+form {
+  text-align: center;
+}
+.contact_form ul {
+    width:750px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+.contact_form li{
+    padding:12px; 
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+input[type="radio"] {
+    margin-left:10px;
+}
