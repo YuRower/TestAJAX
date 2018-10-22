@@ -58,14 +58,6 @@ public class Controller extends HttpServlet {
 		System.out.println("Forward address --> " + requestProcessorInfo.getPath());
 		System.out.println("Controller finished, now go to forward address --> " + requestProcessorInfo.getPath());
 
-		// switch (requestProcessorInfo.getProcessorMode()) {
-		// case FORWARD:
-		// request.getRequestDispatcher(requestProcessorInfo.getPath()).forward(request,
-		// response);
-		// break;
-		// case REDIRECT:
-		response.sendRedirect(requestProcessorInfo.getPath());
-		// break;
-		// }
+		
 	}
 }
