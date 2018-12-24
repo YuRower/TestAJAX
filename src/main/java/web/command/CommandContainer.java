@@ -20,8 +20,6 @@ public class CommandContainer {
 		commands.put("commandNotFound", new NoCommand());
 		
 		// user commands
-		commands.put("login", new LoginCommand());
-		commands.put("logout", new LogoutCommand());
 		commands.put("registration", new RegistrationCommand());
 		commands.put("redirectRegistration", new RedirectRegistrationCommand());
 		commands.put("redirectRegistrationCompleted", new RedirectRegistrationCompletedCommand());

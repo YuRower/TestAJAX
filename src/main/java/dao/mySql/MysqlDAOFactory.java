@@ -24,11 +24,7 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 	private static final Logger LOG = LogManager.getLogger(MysqlDAOFactory.class);
 	
 	private static MysqlDAOFactory instance;
-	/**
-	 * Singletone pattern implementation
-	 * @return instance of this class
-	 * @throws DBException if initialization failed.
-	 */
+	
 	public static synchronized MysqlDAOFactory getInstance() throws DBException {
 		if (instance == null) {
 			instance = new MysqlDAOFactory();
@@ -38,11 +34,7 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 	
 	private DataSource ds;
 	
-	/**
-	 * Private constructor that configures datasource.
-	 * 
-	 * @throws DBException
-	 */
+	
 	private MysqlDAOFactory() throws DBException {
 		try {
 			Context initContext = new InitialContext();
@@ -55,13 +47,7 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 		}
 	}
 	
-	/**
-	 * Returns a DB connection from the Pool of Connections. Before using this
-	 * method you must configure the Date Source and the Connections Pool in
-	 * your WEB_APP_ROOT/META-INF/context.xml file.
-	 * 
-	 * @return DB connection.
-	 */
+
 	public Connection getConnection() throws DBException {
 		Connection con = null;
 		try {
@@ -73,12 +59,7 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 		return con;
 	}
 	
-	/**
-	 * Closes a connection.
-	 * 
-	 * @param con
-	 *            Connection to be closed.
-	 */
+
 	public void close(Connection con) {
 		if (con != null) {
 			try {
@@ -89,12 +70,7 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 		}
 	}
 
-	/**
-	 * Closes a statement object.
-	 * 
-	 * @param stmt
-	 *            Statement to be closed.
-	 */
+
 	public void close(Statement stmt) {
 		if (stmt != null) {
 			try {
@@ -104,13 +80,6 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 			}
 		}
 	}
-
-	/**
-	 * Closes a result set object.
-	 * 
-	 * @param rs
-	 *            Result set to be closed.
-	 */
 	public void close(ResultSet rs) {
 		if (rs != null) {
 			try {
@@ -121,31 +90,11 @@ public class MysqlDAOFactory extends AbstractDAOFactory {
 		}
 	}
 
-	/**
-	 * Closes resources.
-	 * 
-	 * @param con
-	 *            Connection to be closed.
-	 * 
-	 * @param stmt
-	 *            Statement to be closed.
-	 *
-	 * @param rs
-	 *            Result set to be closed.
-	 * 
-	 */
 	public void close(Connection con, Statement stmt, ResultSet rs) {
 		close(rs);
 		close(stmt);
 		close(con);
 	}
-
-	/**
-	 * Rollbacks a connection.
-	 * 
-	 * @param con
-	 *            Connection to be rollbacked.
-	 */
 	public void rollback(Connection con) {
 		if (con != null) {
 			try {

@@ -76,28 +76,6 @@ public class UserDAOImpl implements UserDAO {
 
 
 	@Override
-	public boolean isEmailInUse(String email) throws DBException {
-		boolean result = true;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		Connection con = null;
-		try {
-			con = factory.getConnection();
-			pstmt = con.prepareStatement(SQL_USER_WITH_EMAIL_EXISTS);
-			pstmt.setString(1, email);
-			rs = pstmt.executeQuery();
-			rs.next();
-			result = rs.getBoolean(1);
-			con.commit();
-		} catch (SQLException ex) {
-			factory.rollback(con);
-		} finally {
-			factory.close(con, pstmt, rs);
-		}
-		return result;
-	}
-	
-	@Override
 	public User findUserByEmail(String email) throws DBException  {
 		User user = null;
 		PreparedStatement pstmt = null;
